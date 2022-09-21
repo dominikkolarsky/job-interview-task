@@ -20,7 +20,7 @@ a {
 
 [id] {
     scroll-margin-top: 4rem;
-  }
+}
 
 html {
     scroll-behavior: smooth;
@@ -114,7 +114,7 @@ nav h1 {
     bottom: 0;
     left: 0;
     content: '';
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .bg-header .bg-header__video {
@@ -205,7 +205,7 @@ header a:hover {
 .section-header {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .section-wrapper {
@@ -231,7 +231,7 @@ header a:hover {
     height: 120px;
 }
 
-.service__card .service__card--text{
+.service__card .service__card--text {
     text-align: justify;
     padding: 1rem;
 }
@@ -241,7 +241,7 @@ header a:hover {
     padding: 4rem 0;
 }
 
-#about .section-wrapper{
+#about .section-wrapper {
     justify-content: space-evenly;
 }
 
@@ -257,6 +257,87 @@ header a:hover {
     background-color: var(--color-blackish2);
 }
 
+#contact .section-wrapper {
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem;
+}
+
+.contact-icon {
+    position: relative;
+    top: 3px;
+    color: var(--color-primary);
+    padding-right: 5px;
+}
+
+.contact-text {
+    display: none;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    min-width: 3000px;
+    max-width: 400px;
+    flex: 1;
+    margin: 2rem;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 400px;
+    flex: 1;
+    margin: 2rem;
+}
+
+#contact form input,
+textarea {
+    padding: .5rem;
+    margin: .5rem 0;
+}
+
+#contact form input,
+textarea::placeholder {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contact form textarea {
+    height: 100px;
+    resize: none;
+}
+
+#contact form p {
+    position: relative;
+    top: -4px;
+    text-align: end;
+    font-size: .6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contact form .button {
+    width: 200px;
+    margin: .5rem auto;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: unset;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-4s);
+}
+
+#contact form .button:hover {
+    border: 1px solid unset;
+    color: var(--color-blackish2);
+    background-color: var(--color-primary);
+
+}
+
 /********* copyright */
 .copyright {
     width: 100%;
@@ -268,12 +349,12 @@ header a:hover {
 
 .copyright p,
 a {
-    font-size: .7rem;
+    font-size: .9rem;
     color: var(--color-white);
 }
 
 .copyright p a svg {
-    height: 16px;
+    height: 20px;
     position: relative;
     top: 4px;
 }
@@ -312,6 +393,11 @@ a {
     .counter {
         font-size: 2rem;
     }
+
+    .contact-text {
+        display: inline-block;
+        width: 120px;
+    }
 }
 
 /* ********* DESKTOP */
@@ -335,7 +421,9 @@ a {
         font-size: 4rem;
     }
 
-    #service, #about, #contact {
+    #service,
+    #about,
+    #contact {
         padding: 8rem 0;
     }
 }

@@ -1,16 +1,17 @@
 // ----- meters counter logic
-const element = document.getElementById("counter__number");
+// const element = document.getElementById("counter__number");
 
-window.onload = () => {
-    setInterval(count, 100);
-};
+// window.onload = () => {
+//     setInterval(count, 100);
+// };
 
-let counter = 0;
-function count() {
-    counter++;
-    //console.log(counter)
-    element.innerHTML = counter;
-}
+// let counter = 0;
+// function count() {
+//     counter++;
+//     //console.log(counter)
+//     element.innerHTML = counter;
+// }
+
 
 // ----- NAV COLOR ON SCROLL 
 const navbar = document.getElementById("navbar")
@@ -28,6 +29,7 @@ function changeNavBg() {
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#navMenu");
 const navLink = document.querySelectorAll(".nav-link");
+const logo = document.querySelector('#logo');
 
 hamburger.addEventListener("click", openMenu);
 
@@ -39,6 +41,7 @@ function openMenu() {
 
 //closing logic
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
+logo.addEventListener('click',closeMenu);
 
 function closeMenu() {
     hamburger.classList.remove("active");
