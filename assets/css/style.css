@@ -1,6 +1,9 @@
 :root {
-    --color-white: #f3f3f3;
+    --color-white: #e2e2e2;
+    --color-blackish: #1f1f1f;
+    --color-blackish2: #2e2e2e;
     --color-primary: #1e90ff;
+    --transition-4s: all 0.4s ease;
 }
 
 /* ********** BASIC RESET */
@@ -15,14 +18,19 @@ a {
     text-decoration: none;
 }
 
+[id] {
+    scroll-margin-top: 4rem;
+  }
+
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     min-height: 100vh;
     font-family: 'Oswald', sans-serif;
     color: var(--color-white);
+    background-color: var(--color-blackish);
     overflow-x: hidden;
 }
 
@@ -35,8 +43,7 @@ nav {
     display: flex;
     height: 80px;
     line-height: 80px;
-    transition: all 0.5s ease;
-
+    transition: var(--transition-4s);
 }
 
 nav.active {
@@ -56,6 +63,7 @@ nav .navbar {
 
 nav .navbar .icon {
     padding: 20px 0;
+    cursor: pointer;
 }
 
 nav .navbar ul {
@@ -67,7 +75,7 @@ nav .navbar ul {
     position: absolute;
     top: 80px;
     right: -100%;
-    transition: all 0.5s ease;
+    transition: var(--transition-4s);
     background: rgba(0, 0, 0, .9);
     font-size: 1.2rem;
     z-index: 10;
@@ -79,13 +87,17 @@ nav .navbar ul.active {
 
 nav .navbar ul li a {
     font-size: 1.2rem;
+    transition: var(--transition-4s);
+}
 
+nav .navbar ul li a:hover {
+    color: var(--color-primary);
+    transition: var(--transition-4s);
 }
 
 nav h1 {
     font-size: 1.5rem;
 }
-
 
 /* ********* HEADER BACKGROUND */
 .bg-header {
@@ -179,11 +191,71 @@ header a {
 
 header a:hover {
     color: var(--color-white);
-    border: 1px solid var(--color-white);
+    border: 2px solid var(--color-white);
     transition: all .2s ease-in-out;
-    transform: scale(.97);
 }
 
+/********* SERVICE */
+#service {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+    color: var(--color-blackish);
+}
+
+.section-header {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.section-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service__card {
+    padding: 2rem;
+    margin: .5rem;
+    min-width: 320px;
+    max-width: 350px;
+    flex: 1;
+}
+
+.service__card .service__card--logo {
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+}
+
+.service__card .service__card--text{
+    text-align: justify;
+    padding: 1rem;
+}
+
+/********* ABOUT */
+#about {
+    padding: 4rem 0;
+}
+
+#about .section-wrapper{
+    justify-content: space-evenly;
+}
+
+.about__text {
+    max-width: 800px;
+    margin: auto 0;
+    padding: 2rem;
+}
+
+/********* CONTACT */
+#contact {
+    padding: 4rem 0;
+    background-color: var(--color-blackish2);
+}
 
 /********* copyright */
 .copyright {
@@ -191,7 +263,7 @@ header a:hover {
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background-color: #1e90ff;
+    background-color: var(--color-blackish);
 }
 
 .copyright p,
@@ -209,6 +281,7 @@ a {
 /* ********* TABLET */
 @media screen and (min-width: 768px) {
     nav .navbar ul {
+        display: flex;
         flex-direction: row;
         position: static;
         min-height: 100%;
@@ -217,9 +290,14 @@ a {
         background: unset;
         transition: unset;
     }
+
     nav .navbar ul li {
         padding: 0 1rem;
         margin: 0 .5rem;
+    }
+
+    nav .navbar .icon {
+        display: none;
     }
 
     header h2 {
@@ -233,10 +311,6 @@ a {
 
     .counter {
         font-size: 2rem;
-    }
-
-    nav .navbar .icon {
-        display: none;
     }
 }
 
@@ -259,5 +333,9 @@ a {
 
     header h2 {
         font-size: 4rem;
+    }
+
+    #service, #about, #contact {
+        padding: 8rem 0;
     }
 }

@@ -17,7 +17,7 @@ const navbar = document.getElementById("navbar")
 window.addEventListener("scroll", changeNavBg);
 
 function changeNavBg() {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 160) {
         navbar.classList.add("active");
     } else {
         navbar.classList.remove("active");
